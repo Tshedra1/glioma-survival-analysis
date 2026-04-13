@@ -1,0 +1,115 @@
+Cox Model Results
+
+Call:
+coxph(formula = Surv(time, event) ~ group + age + sex + histology, 
+    data = glioma)
+
+  n= 37, number of events= 23 
+
+                    coef exp(coef)
+groupRIT        -2.44441   0.08678
+age              0.04344   1.04440
+sexMale          0.06411   1.06621
+histologyGrade3 -1.48480   0.22655
+                se(coef)      z
+groupRIT         0.58156 -4.203
+age              0.02152  2.019
+sexMale          0.49755  0.129
+histologyGrade3  0.61826 -2.402
+                Pr(>|z|)    
+groupRIT        2.63e-05 ***
+age               0.0435 *  
+sexMale           0.8975    
+histologyGrade3   0.0163 *  
+---
+Signif. codes:  
+  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05
+  ‘.’ 0.1 ‘ ’ 1
+
+                exp(coef) exp(-coef)
+groupRIT          0.08678    11.5238
+age               1.04440     0.9575
+sexMale           1.06621     0.9379
+histologyGrade3   0.22655     4.4141
+                lower .95 upper .95
+groupRIT          0.02776    0.2713
+age               1.00127    1.0894
+sexMale           0.40210    2.8272
+histologyGrade3   0.06744    0.7611
+
+Concordance= 0.855  (se = 0.036 )
+Likelihood ratio test= 37.39  on 4 df,   p=1e-07
+Wald test            = 27.32  on 4 df,   p=2e-05
+Score (logrank) test = 40.28  on 4 df,   p=4e-08
+
+Call:
+coxph(formula = Surv(time, event) ~ group * histology + age + 
+    sex, data = glioma)
+
+  n= 37, number of events= 23 
+
+                             coef
+groupRIT                 -2.30124
+histologyGrade3          -1.26465
+age                       0.04593
+sexMale                   0.08616
+groupRIT:histologyGrade3 -0.50023
+                         exp(coef)
+groupRIT                   0.10013
+histologyGrade3            0.28234
+age                        1.04700
+sexMale                    1.08998
+groupRIT:histologyGrade3   0.60639
+                         se(coef)
+groupRIT                  0.65828
+histologyGrade3           0.78503
+age                       0.02222
+sexMale                   0.49875
+groupRIT:histologyGrade3  1.13920
+                              z
+groupRIT                 -3.496
+histologyGrade3          -1.611
+age                       2.067
+sexMale                   0.173
+groupRIT:histologyGrade3 -0.439
+                         Pr(>|z|)    
+groupRIT                 0.000473 ***
+histologyGrade3          0.107190    
+age                      0.038733 *  
+sexMale                  0.862842    
+groupRIT:histologyGrade3 0.660586    
+---
+Signif. codes:  
+  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05
+  ‘.’ 0.1 ‘ ’ 1
+
+                         exp(coef)
+groupRIT                    0.1001
+histologyGrade3             0.2823
+age                         1.0470
+sexMale                     1.0900
+groupRIT:histologyGrade3    0.6064
+                         exp(-coef)
+groupRIT                     9.9866
+histologyGrade3              3.5418
+age                          0.9551
+sexMale                      0.9174
+groupRIT:histologyGrade3     1.6491
+                         lower .95
+groupRIT                   0.02756
+histologyGrade3            0.06061
+age                        1.00238
+sexMale                    0.41009
+groupRIT:histologyGrade3   0.06502
+                         upper .95
+groupRIT                    0.3638
+histologyGrade3             1.3152
+age                         1.0936
+sexMale                     2.8971
+groupRIT:histologyGrade3    5.6551
+
+Concordance= 0.855  (se = 0.036 )
+Likelihood ratio test= 37.59  on 5 df,   p=5e-07
+Wald test            = 26.54  on 5 df,   p=7e-05
+Score (logrank) test = 43.71  on 5 df,   p=3e-08
+
