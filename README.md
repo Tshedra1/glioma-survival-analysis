@@ -1,5 +1,3 @@
-# glioma-survival-analysis
-
 # Glioma Survival Analysis
 
 ## Overview
